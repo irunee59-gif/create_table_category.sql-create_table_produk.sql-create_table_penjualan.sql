@@ -1,4 +1,4 @@
 create table kategori (
-  idcr serial primary key,
+  id serial primary key,
   nama varchar(200) unique not null
 );
