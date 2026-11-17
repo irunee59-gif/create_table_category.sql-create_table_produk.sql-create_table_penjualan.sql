@@ -1,33 +1,4 @@
-PRODUK
-create table produk(
-   id serial primary key,
-   nama varchar(50) not null,
-   harga int check(harga >0),
-   stok int default 0 check(stok >=0),
-   kategori_id int,
-
-constraint fk_kategori_produk
-   foreign key (kategori_id)
-   references kategori(id)
-   on delete set null
-);
-
-KATEGORI
 create table kategori (
   idcr serial primary key,
   nama varchar(200) unique not null
-);
-
-PENJUALAN
-create table penjualan(
-  id serial primary key,
-  produk_id int,
-  kelas varchar(5),
-  jumlah int check(jumlah >0),
-  tanggal int,
-
-constraint fk_produk_penjualan
-  foreign key (produk_id)
-  references produk(id)
-  on delete set null
 );
